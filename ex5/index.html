@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <!-- fieldset cria uma borda no formulario -->
+    <fieldset>
+        <!-- maxlength serve para colocar o número maximo de caracteres -->
+        <!-- required exige que o campo seja preenchido -->
+        <!-- pattern serve para criar a validação dos tipos de caracteres que pode ser colocado no input -->
+        <h1>Cadastro de pessoas</h1>
+        <form class="form js-form">
+            <label for="name">
+                Primeiro Nome
+                <input class="form-field js-field" id="name" maxlength="120" minlength="3" name="name"
+                    pattern="^(([aA-zZ])+(\\s[aA-zZ]+)*)$" required type="text">
+            </label>
+            <label for="birth-date">
+                Data de Nascimento
+                <input class="form-field js-field" id="birth-date" name="birth-date" type="date" required
+                    pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}">
+            </label>
+            <input type="submit" value="Submit" id="salvar">
+        </form>
+    </fieldset>
+    <table>
+        <th>
+            Nome
+        </th>
+        <th>
+            Data de nascimento
+        </th>
+    </table>
+
+</body>
+
+</html>
