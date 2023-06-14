@@ -30,7 +30,7 @@ body {
 .model {
     position: absolute;
     background-color: #0000009c;
-    width: 60%;
+    width: 400px;
     height: 100%;
     margin-top: 100px;
     justify-content: space-evenly;
@@ -57,6 +57,5 @@ body {
     height: 20px;
     font-size: 20px;
     position: fixed;
-    margin-left: 55%;
-    margin-bottom: 20%;
+    margin:0 0 230px 360px;
 }

@@ -9,7 +9,7 @@ const pessoas = JSON.parse(localStorage.getItem("pessoas")) || []
 pessoas.forEach((elemento) => {
     criaElemento(elemento)
 
-
+    
 });
 const Linha = document.querySelectorAll('tr')
 
@@ -21,7 +21,7 @@ Linha.forEach((elemento) => {
     elemento.addEventListener('click', evento => {
         linhaCliacada = evento.target.parentNode
 
-
+        
 
         if (linhaCliacada.innerText === 'Nome	Data de nascimento') {
             alert('Não é possível alterar essas informações')
@@ -75,15 +75,39 @@ Linha.forEach((elemento) => {
                 model.style.display = "none"
             })
 
+            //pegando as informações da linha a partir do id da linha clicada
+            //console.log(pessoas[linhaCliacada.id])
+            //console.log(linhaCliacada.id)
 
-            editar.forEach((elemento) => {
+            inputName.value = pessoas[linhaCliacada.id].nome
+            inputDate.value = pessoas[linhaCliacada.id].data
+
+            console.log(pessoas[linhaCliacada.id].data)
+            btn_editar.addEventListener('click', evento => {
+                const novoInputNome = inputName.value
+                console.log(novoInputNome)
+                
+                const novoInputData = inputDate.value
+                console.log(novoInputData)
+
+                console.log(linhaCliacada)
+
+                linhaCliacada.innerHTML = `
+                <tr> 
+                    <td>${novoInputNome}</td>
+                    <td>${novoInputData}</td>
+                </tr>
+                `
+
+                editaElemento(linhaCliacada.id, novoInputNome, novoInputData )
+
+                console.log(pessoas[linhaCliacada.id])
+                model.style.display = "none"
 
                 
-                console.log(elemento)
-                inputDate.value = elemento.innerText
                 
+
             })
-
 
 
 
@@ -112,7 +136,7 @@ form.addEventListener('submit', evento => {
 
     pessoas.push(pessoaAtual)
 
-
+    
 
     localStorage.setItem("pessoas", JSON.stringify(pessoas))
 
@@ -131,19 +155,28 @@ function criaElemento(pessoa) {
     td1.innerHTML = pessoa.nome
     td2.innerHTML = pessoa.data
 
+    tr.id = pessoa.id
+
     table.appendChild(tr)
     tr.appendChild(td1)
     tr.appendChild(td2)
 
 }
 
+function editaElemento(id, valorNome, valorData) {
+    const pessoaEditar = pessoas[id]
+
+    pessoaEditar.nome = valorNome;
+    pessoaEditar.data = valorData;
 
 
-
-
-function atualizaElemento(elemento) {
+    localStorage.setItem("pessoas", JSON.stringify(pessoas))
 
 }
+
+
+
+
 
 
 
