@@ -1,0 +1,62 @@
+.pessoa {
+    background-color: blue;
+}
+
+table {
+    background-color: aqua;
+    border: 1px solid #000;
+    width: 400px;
+}
+
+td {
+    border-right: 1px solid #000;
+    border-top: 1px solid #000;
+    margin: 0;
+    padding: 2px;
+    text-align: center;
+}
+
+th {
+    border-right: 1px solid #000;
+    text-align: center;
+}
+
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.model {
+    position: absolute;
+    background-color: #0000009c;
+    width: 60%;
+    height: 100%;
+    margin-top: 100px;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.model input {
+    height: 30px;
+    background-color: aliceblue;
+    opacity: 100%;
+}
+
+.model button {
+    height: 30px;
+    width: 70px;
+}
+
+.sair {
+    background: transparent;
+    border: 0;
+    color: blanchedalmond;
+    height: 20px;
+    font-size: 20px;
+    position: fixed;
+    margin-left: 55%;
+    margin-bottom: 20%;
+}

@@ -19,12 +19,13 @@ form.addEventListener('submit', evento => {
     console.log(nome.value)
     console.log(data.value)
 
+    
     const pessoaAtual = {
         "nome": nome.value,
         "data": data.value
     }
 
-    console.log(formataData(data.value));
+    
     pessoaAtual.id = pessoas[pessoas.length - 1] ? (pessoas[pessoas.length - 1]).id + 1 : 0;
 
     criaElemento(pessoaAtual)
@@ -58,12 +59,5 @@ function criaElemento(pessoa) {
 
 
 
-function formataData(formatacao){
-    const ano = formatacao.substring(0,3)
-    const mes = formatacao.substring(5,6)
-    const dia = formatacao.substring(8,19)
 
-    formatacao = `${dia}/${mes}${ano}`
-
-}
 
